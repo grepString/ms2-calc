@@ -2,41 +2,69 @@
 <html lang="en">
 	<head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MapleStory 2 ROI Calculator</title>
+	<meta name="description" content="Simple ROI calculator for the Black Market in MapleStory 2." />
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="MapleStory 2 ROI Calculator">
+	<meta name="twitter:description" content="Simple ROI calculator for the Black Market in MapleStory 2.">
+	<meta name="twitter:creator" content="@illusorylogic">
+	<meta name="twitter:image" content="https://i.imgur.com/KYJa6A0.png">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Dark and Light Map Editor" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://grepstring.github.io/ms2-calc" />
+	<meta property="og:image" content="https://i.imgur.com/KYJa6A0.png" />
+	<meta property="og:description" content="Simple ROI calculator for the Black Market in MapleStory 2." />
+
 	<link rel="icon" href="favicon.ico">
-	<title>MapleStory 2 Calculator</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<form class="form-signin">
-			<div class="text-center mb-4">
-				<h1 class="h3 mb-3 font-weight-normal">Black Market Calculator</h1>
-				<p>Your profits at a glance.</p>
-			</div>
-			<div class="form-label-group">
-				<input type="number" id="inputPPI" class="form-control" placeholder="Price Per Item" min="0" max="500000000" required autofocus>
-				<label for="inputPPI" data-toggle="tooltip" data-placement="left" title="Max Price: 500,000,000">Price Per Item</label>
-			</div>
-			<div class="form-label-group">
-				<input type="number" id="inputQuantity" class="form-control" placeholder="Quantity" min="0" max="500000000" required>
-				<label for="inputQuantity">Quantity</label>
-			</div>
-			<div class="form-label-group">
-				<h4>Final Cost</h4>
-				<p id="cost" style="font-size: 1.5em;">---</p>
-			</div>
-			<div class="form-label-group">
-				<h4 data-toggle="tooltip" title="Profit = Cost - 10%" data-placement="left">Estimated Profit</h4>
-				<p id="profit" style="font-size: 1.5em;">---</p>
-			</div>
-				<input type="button" class="btn btn-lg btn-primary btn-block" onclick="ms2Calc()" value="Submit"></button>
-				<p class="mt-5 mb-3 text-muted text-center">Made with 💦 by SSH</p>
-		</form>
-
-		<script src="js/calc.js"></script>
+		<div class="container">
+			<form class="form-signin">
+				<div class="mb-4">
+					<h1 class="h3 mb-3 font-weight-normal">Black Market ROI Calculator</h1>
+					<p class="text-center" style="padding-bottom: 20px;">Your profit at a glance.</p>
+						<div class="form-label-group">
+							<input type="number" id="inputBP" class="form-control" placeholder="Buy Price" required autofocus>
+							<label for="inputBP">Buy Price</label>
+						</div>
+						<div class="form-label-group">
+							<input type="number" id="inputQuantity" class="form-control" placeholder="Quantity" min="0" max="500000000" required>
+							<label for="inputQuantity">Quantity</label>
+						</div>
+						<div class="form-label-group">
+							<h5>Initial Investment</h5>
+							<p id="finalCost" style="font-size: 1em;">---</p>
+						</div>
+						<hr style="color: #fff;">
+						<div class="form-label-group">
+							<input type="number" id="inputRP" class="form-control" placeholder="Resale Price" required autofocus>
+							<label for="inputRP">Resale Price</label>
+						</div>
+						<!--<div class="form-label-group">
+							<h5>Resale Profit</h5>
+							<p id="finalCost2" style="font-size: 1em;">---</p>
+						</div>-->
+						<div class="form-label-group">
+							<h5>Market Sale Profit</h5>
+							<p id="marketProfit" style="font-size: 1em;">---</p>
+						</div>
+						<div class="form-label-group">
+							<h5>Total Return on Investment</h5>
+							<p id="roi" style="font-size: 1em;">---</p>
+						</div>
+							<input type="button" class="btn btn-lg btn-primary btn-block" onclick="ms2CalcR()" value="Submit"></button>
+							<p class="mt-5 mb-3 text-muted text-center">Made with 💦 by SSH</p>	
+				</div>
+			</form>
+		</div>
+		<script src="js/calcR.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
