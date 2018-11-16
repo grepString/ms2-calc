@@ -18,7 +18,7 @@
 			</div>
 			<div class="form-label-group">
 				<input type="number" id="inputPPI" class="form-control" placeholder="Price Per Item" min="0" max="500000000" required autofocus>
-				<label for="inputPPI">Price Per Item</label>
+				<label for="inputPPI" data-toggle="tooltip" title="Max Price: 500,000,000">Price Per Item</label>
 			</div>
 			<div class="form-label-group">
 				<input type="number" id="inputQuantity" class="form-control" placeholder="Quantity" min="0" max="500000000" required>
@@ -29,7 +29,7 @@
 				<p id="cost" style="font-size: 1.5em;">---</p>
 			</div>
 			<div class="form-label-group">
-				<h4>Estimated Profit</h4>
+				<h4 data-toggle="tooltip" title="Profit = Cost - 10%">Estimated Profit</h4>
 				<p id="profit" style="font-size: 1.5em;">---</p>
 			</div>
 				<input type="button" class="btn btn-lg btn-primary btn-block" onclick="ms2Calc()" value="Submit"></button>
@@ -40,5 +40,10 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script>
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();   
+		});
+		</script>
 	</body>
 </html>
