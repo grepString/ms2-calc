@@ -29,7 +29,7 @@
 			<form class="form-signin">
 				<div class="mb-4">
 					<h1 class="h3 mb-3 font-weight-normal">Black Market Calculator</h1>
-					<p class="text-center" style="padding-bottom: 20px;">Your profit at a glance.</p>
+					<p class="text-center" style="padding-bottom: 20px;">Your profit at a glance. Hover over </p>
 						<div class="form-label-group">
 							<input type="number" id="inputBP" class="form-control" placeholder="Buy Price" required autofocus>
 							<label for="inputBP">Buy Price</label>
@@ -39,7 +39,7 @@
 							<label for="inputQuantity">Quantity</label>
 						</div>
 						<div class="form-label-group">
-							<h5>Initial Investment</h5>
+							<h5 data-toggle="tooltip" data-placement="left" title="Buy Price * Quantity">Initial Investment</h5>
 							<p id="finalCost" style="font-size: 1em;">---</p>
 						</div>
 						<hr style="color: #fff;">
@@ -52,11 +52,11 @@
 							<p id="finalCost2" style="font-size: 1em;">---</p>
 						</div>-->
 						<div class="form-label-group">
-							<h5>Market Sale Profit</h5>
+							<h5 data-toggle="tooltip" data-placement="left" title="Includes 10% tax.">Market Sale Profit</h5>
 							<p id="marketProfit" style="font-size: 1em;">---</p>
 						</div>
 						<div class="form-label-group">
-							<h5>Total Return on Investment</h5>
+							<h5 data-toggle="tooltip" data-placement="left" title="Difference between Initial Investment and the Market Sale Profit.">Total Return on Investment</h5>
 							<p style="font-size: 1em;"><span id="roi">---</span>&nbsp;&nbsp;<span id="gains">(<span id="inc">--</span>)</span></p>
 						</div>
 							<input type="button" class="btn btn-lg btn-primary btn-block" onclick="ms2CalcR()" value="Submit"></button>
